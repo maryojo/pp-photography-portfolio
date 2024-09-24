@@ -1,3 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer base {
+  .page{
+    background-color: #070708;
+    color: #fff;
+    font-family: "Manrope", sans-serif;
+  }
+
+  @keyframes scroll {
+    0% {
+      transform: translateX(100%);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+  
+  .banner-scroll {
+    display: flex;
+    animation: scroll 200s linear infinite;
+    width: max-content;
+  }  
+}
+
+
+@layer components {
+  button{
+    @apply bg-[#1C1C21] py-2 px-6 rounded-lg text-[14px] font-medium;
+  }
+
+  .nav-style{
+    background: rgba(39, 37, 37, 0);
+    /* box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 ); */
+    backdrop-filter: blur( 8.5px );
+    -webkit-backdrop-filter: blur( 8.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+  }
+ .triangle{
+    display:inline-block;
+    width:150px;
+    color:red;
+    margin:20px;
+    filter:url(#round);
+  }
+  .triangle::before {
+    content:"";
+    display:block;
+    padding-top:86.6%;
+    background:url(https://picsum.photos/id/1061/300/300) center/cover;
+   clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+ }
+  .custom-clip-path{
+    width: 200px;
+    height: 200px;
+    background-color: gold;
+    clip-path: url(#star-path);
+  }
+}
